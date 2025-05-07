@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Interactive rating component</title>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-orange500: hsl(25, 97%, 53%);
+        --color-White: hsl(0, 100%, 100%);
+        --color-Grey500: hsl(217, 12%, 63%);
+        --color-Grey900: hsl(213, 19%, 18%);
+        --color-Grey950: hsl(216, 12%, 8%);
+        --font-overpass: "Overpass", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-Grey950 flex items-center justify-center min-h-screen px-6 "
+  >
+      <main
+    id="rating-state"
+    class="container bg-gradient-to-b from-Grey900 to-Grey950 rounded-2xl shadow-lg p-8 max-w-sm font-overpass"
+  >
+    <!-- Star Icon -->
+    <section
+      class="flex items-center bg-Grey900 p-3 rounded-full mb-6 w-fit outline outline-1 outline-Grey900"
+    >
+      <img src="./images/icon-star.svg" alt="Star Icon" class="w-6 h-6" />
+    </section>
+
+    <!-- Rating State -->
+    <h1 class="text-2xl text-White font-bold mb-4">How did we do?</h1>
+    <p class="text-Grey500 text-sm mb-6">
+      Please let us know how we did with your support request. All feedback is
+      appreciated to help us improve our offering!
+    </p>
+
+    <!-- Rating Buttons -->
+    <div id="rating-buttons" class="flex justify-between w-full mb-6">
+      <button
+        class="rating-btn w-12 h-12 bg-Grey900 text-Grey500 rounded-full hover:bg-orange500 hover:text-White transition"
+        data-value="1"
+      >
+        1
+      </button>
+      <button
+        class="rating-btn w-12 h-12 bg-Grey900 text-Grey500 rounded-full hover:bg-orange500 hover:text-White transition"
+        data-value="2"
+      >
+        2
+      </button>
+      <button
+        class="rating-btn w-12 h-12 bg-Grey900 text-Grey500 rounded-full hover:bg-orange500 hover:text-White transition"
+        data-value="3"
+      >
+        3
+      </button>
+      <button
+        class="rating-btn w-12 h-12 bg-Grey900 text-Grey500 rounded-full hover:bg-orange500 hover:text-White transition"
+        data-value="4"
+      >
+        4
+      </button>
+      <button
+        class="rating-btn w-12 h-12 bg-Grey900 text-Grey500 rounded-full hover:bg-orange500 hover:text-White transition"
+        data-value="5"
+      >
+        5
+      </button>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      id="submit-btn"
+      class="w-full bg-orange500 text-Grey950 py-3 rounded-3xl uppercase font-bold tracking-wide hover:bg-White hover:text-Grey950 transition"
+    >
+      Submit
+    </button>
+    <p id="error-message" class="text-red-500 text-sm mt-4 hidden">
+      Please select a rating before submitting.
+    </p>
+  </main>
+
+    <!-- Thank You State -->
+    <main
+      id="thank-you-state"
+      class="container bg-gradient-to-b from-Grey900 to-Grey950 rounded-2xl shadow-lg p-8 max-w-sm text-center font-overpass hidden"
+    >
+      <section class="mb-6">
+        <img
+          src="./images/illustration-thank-you.svg"
+          alt="Thank You"
+          class="w-24 h-24 mx-auto"
+        />
+      </section>
+      <p
+        id="selected-rating"
+        class="bg-Grey950 text-orange500 py-2 px-4 rounded-full inline-block mb-6"
+      >
+        You selected 4 out of 5
+      </p>
+      <h1 class="text-2xl text-White font-bold mb-4">Thank you!</h1>
+      <p class="text-Grey500 text-sm mb-6">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
+      <!-- Rate Again Button -->
+      <button
+        id="rate-again-btn"
+        class="w-full bg-Grey900 text-orange500 py-3 rounded-lg font-bold tracking-wide hover:bg-orange500 hover:text-White transition"
+      >
+        Rate Again
+      </button>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
